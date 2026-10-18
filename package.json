@@ -1,0 +1,20 @@
+{
+  "name": "demo-server",
+  "version": "1.0.0",
+  "description": "Small Node.js web server — Developer/DevOps demo",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "node --test src/tests/api.test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  demo-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: demo-server:local
+    container_name: demo-server
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
